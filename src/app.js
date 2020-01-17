@@ -10,6 +10,7 @@ const rootPath = path.join(__dirname, '../public')
 
 //* starting express server
 const app = express()
+const port = process.env.PORT || 2020
 
 //* set up template engine
 app.set('view engine', 'hbs')
@@ -75,6 +76,6 @@ app.get('*', (req, res) => {
     res.send('Error page not found')
 })
 
-app.listen(2020, () => {
-    console.log('Starting Zubdev Weather sever 2020')
+app.listen(port, () => {
+    console.log('Starting Zubdev Weather sever ' + port)
 })
